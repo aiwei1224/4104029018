@@ -1,0 +1,57 @@
+<html>
+<center><head>問卷調查</title>
+ 	
+	<style>
+	body{
+	background-color:MediumSlateBlue;
+	}
+	</body>
+ 	table, td, th {
+ 		border: 1px solid black;
+ 		border-collapse: collapse;
+ 	}
+ 	</style>
+ </head>
+<body>
+<form name="form1">
+	名字：<INPUT name="username" type=text size=10 maxlength=20><P>
+	生日：<INPUT name="birth" type=date><P>
+	
+	<input type="button" value="送出" onClick="a()">
+	<input type="reset" value="重新輸入">
+</form><br><br>
+<table id="table1" style="display:none;" border="1">
+ 	<tr>
+		<td>名字：</td>
+		<td><div id="tname" onmouseover="veryhard()"></div></td>
+ 	</tr>
+ 	<tr>
+		<td>生日：</td>
+		<td id="tbirth"></td>
+	</tr>
+ 	
+ </table>
+<script>
+function a(){
+    
+	var name = document.form1.username.value;
+	var birth = document.form1.birth.value;
+	
+	alert("your input is Name: "+name+"\n Birthday: "+birth);
+	
+	/*document.write("名字：" + name + "</br>");
+	document.write("生日：" + birthd + "</br>");
+	document.write("性別：" + sexd + "</br>");
+	document.write("興趣：" + hobbyd + "</br>");
+	document.write("自傳：" + noted + "</br>");*/
+	table1.style.display = "table";
+	tname.innerHTML = name;
+	tbirth.innerHTML = birth;
+	
+}
+function veryhard() {
+  document.getElementById("tname").style.color="red";
+  }
+</script>
+</body>
+</html>
